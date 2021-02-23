@@ -4,42 +4,37 @@ import 'remixicon/fonts/remixicon.css'
 import './App.css'
 
 function App() {
-  const [query, setQuery] = useState('')
-  const [weather, setWeather] = useState({})
-
+  const [lat, setLat] = useState('')
+  const [lon, setLon] = useState('')
+  const [meteo, setMeteo] = useState({})
+  console.log(meteo)
+  
   const search = async(e) => {
-    if(e.key === 'Enter') {
-      const data = await fetchWeather(query)
-      setWeather(data)
-      setQuery('')
-    }
+      const data = await fetchWeather(lat, lon)
+      setMeteo(data)
+      setLat('')
+      setLon('')
   }
-
-  const handleClick = async(e) => {
-    const data = await fetchWeather(query)
-      setWeather(data)
-      setQuery('')
-  } 
-
+  
   return (
     <div className="main-container">
       <div className="inputs">
-        <input type="text" className="search" placeholder="Enter city name..." value={query} onChange={(e) => setQuery(e.target.value)} onKeyPress={search}/>
+        <input type="text" className="search" placeholder="Enter latitude..." value={lat} onChange={(e) => setLat(e.target.value)} />
+        <input type="text" className="search" placeholder="Enter longitude..." value={lon} onChange={(e) => setLon(e.target.value)} />
+        <button onClick={search} className="search">Search</button>
       </div>
-      {weather.main && (
+      {meteo.current && (
         <div className="city">
           <h2 className="city-name">
-          <span>{weather.name}</span>
-          <sup>{weather.sys.country}</sup>
+          <span>{meteo.lat}</span>
+          <span>{meteo.lon}</span>
           </h2>
           <div className="city-temp">
-              {Math.round(weather.main.temp)}
+              {Math.round(meteo.current.temp)}
               <sup>&deg;C</sup>
           </div>
           <div className="info">
-            <img className="city-icon" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt={weather.weather[0].description}/>
-            <p>{weather.weather[0].description}</p>
-          </div>
+        </div>
         </div>
       )}
     </div>
