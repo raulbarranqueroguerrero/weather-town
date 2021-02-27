@@ -24,12 +24,12 @@ function App() {
         <button onClick={search} className="search">Search</button>
       </div>
       {meteo.current && (
-        <div className="city">
-          <h2 className="city-name">
-          <span>{meteo.lat}</span>
-          <span>{meteo.lon}</span>
-          </h2>
-          <div className="city-temp">
+        <div className="location">
+          <div className="location-geo">
+            <span className="location-geo latitude">latitude: {meteo.lat}</span>
+            <span className="location-geo longitude">longitude: {meteo.lon}</span>
+          </div>
+          <div className="location-temp">
               {Math.round(meteo.current.temp)}
               <sup>&deg;C</sup>
           </div>

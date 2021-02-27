@@ -29,7 +29,7 @@ html, body, #root {
     background: rgba(250, 250, 250, 0.85);
 }
 
-.city {
+.location {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +46,31 @@ p {
     letter-spacing: 0.05em;
 }
 
-.city-temp {
+.location-geo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 5%;
+    margin: .5rem;
+    background-color: #527A73;
+    color:rgba(250, 250, 250, 0.85);
+    padding: 1.5rem 1.5rem;
+
+}
+
+.latitude {
+    background-color: #22504A;
+    padding: .5rem;
+   
+}
+
+.longitude {
+    background-color: #22504A;
+    padding: .5rem;
+
+
+}
+
+.location-temp {
     font-size: 5rem;
     font-weight: bold;
     margin-top: 10px;
@@ -54,15 +78,15 @@ p {
     text-align: center;
 }
 
-.city sup {
+.location sup {
     font-size: 0.5em;
 }
 
-.city-name {
+.location-name {
     font-size: 2em;
 }
 
-.city-name sup {
+.location-name sup {
     padding: 0.2em 0.6em;
     margin-left: 0.2em;
     border-radius: 30px;
@@ -70,7 +94,7 @@ p {
     background: #ff8c00;
 }
 
-.city-icon {
+.location-icon {
     margin-top: 10px;
     width: 100px;
     height: 100px;
