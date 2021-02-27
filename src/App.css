@@ -28,9 +28,10 @@ html, body, #root {
 }
 
 .search {
-    font-size: 1.1rem;
+    font-size: .9rem;
     outline: none;
     padding: 10px 5%;
+    padding-left: 7%;
     border-radius: 20px;
     border: none;
     margin: 5%;
